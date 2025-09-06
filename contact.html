@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TSWANYA ATTIC - Register</title>
+  <link rel="stylesheet" href="gpt.css" />
+  <script src="gpt.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1>Contact Us</h1>
+    <p>Send a message to TSWANYA ATTIC</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact us</a>
+  </nav>
+
+  <section>
+    <h2>Send Us a Message</h2>
+    <form id="whatsappForm">
+      <label for="name">Full Name:</label><br />
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="message">Your Message:</label><br />
+      <textarea id="message" name="message" rows="6" required></textarea><br /><br />
+
+      <button type="submit">Send via WhatsApp</button>
+    </form>
+  </section>
+
+  <script>
+    document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Replace with your WhatsApp number (country code, no + or spaces)
+      let phone = "2349074013764";  
+
+      let name = document.getElementById("name").value;
+      let message = document.getElementById("message").value;
+
+      // Create WhatsApp message
+      let text = "Hello, my name is " + name + ". " + message;
+
+      // Encode and open WhatsApp
+      let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
+      window.open(url, "_blank");
+    });
+  </script>
+
+</body>
+</html>
